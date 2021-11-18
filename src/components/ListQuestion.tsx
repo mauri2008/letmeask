@@ -1,30 +1,32 @@
 
+import { ReactNode } from 'react';
 import likeImg from '../assets/images/like.svg';
+import { auth } from '../Services/firebase';
 
 import '../styles/list-question.scss';
 
 type ListQuestionsProps ={
-    comment:string;
-    avatar:string;
-    name: string;
+    content: string;
+    author: {
+        name:string;
+        avatar:string;
+    }
+    children?: ReactNode;
 }
 
 
-export function ListQuestion ( props: ListQuestionsProps){
+export function ListQuestion ( {content, author, children} : ListQuestionsProps){
     return(
         <div id="list-question">
-            <p>{props.comment}</p>
+            <p>{content}</p>
             <div className="list-question-footer">
                 <div className="list-question-user">
-                    <img src={props.avatar} alt={props.name} />
-                    <span>{props.name}</span>
+                    <img src={author.avatar} alt={author.name} />
+                    <span>{author.name}</span>
                 </div>
 
-                <div className="list-question-like">
-                    <span>16</span>
-                    <button>
-                        <img src={likeImg} alt="like" />
-                    </button>
+                <div>
+                    {children}
                 </div>
 
             </div>

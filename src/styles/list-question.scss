@@ -37,28 +37,33 @@
 
             }
         }
-        .list-question-like{
-            display: flex;
-            align-items: center;
-    
-            span{
-                font-size: 16px;
+
+        button {
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+            gap:8px;
+            transition: filter 0.2s;
+
+            &.like-button{
+                display: flex;
+                align-items: flex-end;
                 color: #737380;
-                font-family: 'Roboto', sans-serif;
+
             }
-    
-            button{
-                background: transparent;
-                border: 0;
-                margin-left: 10px;
-                cursor: pointer;
-                
-                
-                img{
-                    width: 24px;
-                    height: 24px;
-                }
+            &.liked {
+                color: #835afd;
+
+                svg path{
+                    stroke:#835afd;
+                }   
+            }
+
+            &:hover{
+                filter: brightness(0.7);
             }
         }
+
+
     }
     }
