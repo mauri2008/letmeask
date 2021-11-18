@@ -35,7 +35,13 @@
                 color: #737380;
                 font-family: 'Roboto', sans-serif;
 
-            }
+            }        
+
+        }
+
+        .list-question-btn-group{
+            display: flex;
+            gap:16px;
         }
 
         button {
@@ -65,5 +71,18 @@
         }
 
 
+
     }
+
+    &.highlighted{
+        background:#f4f0ff;
+        border: 1px solid #835afd;
     }
+
+    &.answered{
+        background:#DBDCDD ;
+    }
+}
+
+
+

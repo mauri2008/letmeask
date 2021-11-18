@@ -12,12 +12,17 @@ type ListQuestionsProps ={
         avatar:string;
     }
     children?: ReactNode;
+    isAnswered?:boolean;
+    isHighLighted?:boolean;
 }
 
 
-export function ListQuestion ( {content, author, children} : ListQuestionsProps){
+export function ListQuestion ( {content, author, children , isAnswered = false, isHighLighted=false} : ListQuestionsProps){
     return(
-        <div id="list-question">
+        <div 
+            id="list-question" 
+            className={`${isHighLighted && !isAnswered? 'highlighted': ''} ${isAnswered? 'answered':''}` }
+        >
             <p>{content}</p>
             <div className="list-question-footer">
                 <div className="list-question-user">
@@ -25,7 +30,7 @@ export function ListQuestion ( {content, author, children} : ListQuestionsProps)
                     <span>{author.name}</span>
                 </div>
 
-                <div>
+                <div className="list-question-btn-group">
                     {children}
                 </div>
 

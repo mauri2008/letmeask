@@ -34,7 +34,7 @@ export function NewRoom(){
             authorId: user?.id,
         })
 
-        navigate(`/room/${firebaseRoom.key}`)
+        navigate(`/admin/room/${firebaseRoom.key}`)
         
     }
 
